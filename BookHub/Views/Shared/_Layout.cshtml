@@ -9,6 +9,29 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <style>
+        footer {
+            clear: both;
+            height: 100px;
+        }
+
+        .social-footer {
+            width: 33%;
+            float: left;
+            height: 30%;
+        }
+
+            .social-footer:hover {
+                background-color: black;
+                opacity: .5;
+            }
+
+        .center {
+            width: 50px;
+            margin: auto;
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -62,7 +85,22 @@
 
     <footer class="border-top footer text-white-50 bg-primary">
         <div class="container ">
-            &copy; 2021 - BookHub
+            <div class="social-footer">
+                <div class="center">
+                    <img src="Twitter.png" alt="twitter icon" height="48" width="55">
+                </div>
+            </div>
+            <div class="social-footer">
+                <div class="center">
+                    <img src="Facebook.png" alt="facebook icon" height="55" width="28">
+                </div>
+            </div>
+            <div class="social-footer">
+                <div class="center">
+                    <img src="Instagram.png" alt="instagram icon" height="52" width="52">
+                </div>
+            </div>
+            <div> &copy; 2021 - BookHub</div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
