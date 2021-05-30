@@ -56,7 +56,8 @@
             <div class="form-group">
                 <label asp-for="Input.ConfirmPassword"></label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger">
+                </span>
             </div>
             @if (User.IsInRole(SD.Role_Admin))
             {
