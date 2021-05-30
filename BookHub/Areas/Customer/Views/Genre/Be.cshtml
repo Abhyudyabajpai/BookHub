@@ -1,37 +1,99 @@
 ﻿@model IEnumerable<BookHub.Models.Product>
  <h2><strong><u>Business and Economics</u></strong></h2>
-<div class="row pb-3 backgroundWhite">
+ <div class="row pb-3 backgroundWhite">
 
-    @foreach (var product in Model)
-    {
+     @foreach (var product in Model)
+     {
 
 
-        @if (product.Category.Name.Contains("Business and Economics"))
-        {
-            <div class="col-lg-3 col-md-6">
-                <div class="row p-2">
-                    <div class="col-12  p-1">
-                        <div class="card" style="border:0px; border-radius:25px;">
-                            <img src="@product.ImageUrl" class="card-img-top rounded" />
-                            <div class="pl-1">
-                                <p class="card-title h5"><b style="color:#2c3e50">@product.Title</b></p>
-                                <p class="card-title text-primary">by <b>@product.Author</b></p>
-                            </div>
-                            <div style="padding-left:5px;">
-                                <p>List Price: <strike><b class="">$@product.ListPrice.ToString("0.00")</b></strike></p>
-                            </div>
-                            <div style="padding-left:5px;">
-                                <p style="color:maroon">As low as: <b class="">$@product.Price100.ToString("0.00")</b></p>
-                            </div>
-                            <div>@product.Category.Name</div>
-                        </div>
-                        <div>
-                            <a asp-action="Details" class="btn btn-outline-success form-control" asp-route-id="@product.Id">Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
-    }
+         @if (product.Category.Name.Contains("Business and Economics"))
+         {
+             <div class="col-lg-3 col-md-6">
+                 <div class="row p-2">
+                     <div class="col-12  p-1">
+                         <div class="card" style="border:0px; border-radius:25px;">
+                             <img src="@product.ImageUrl" class="card-img-top rounded" />
+                             <div class="pl-1">
+                                 <p class="card-title h5"><b style="color:#2c3e50">@product.Title</b></p>
+                                 <p class="card-title text-primary">by <b>@product.Author</b></p>
+                             </div>
+                             <div style="padding-left:5px;">
+                                 <p>List Price: <strike><b class="">$@product.ListPrice.ToString("0.00")</b></strike></p>
+                             </div>
+                             <div style="padding-left:5px;">
+                                 <p style="color:maroon">As low as: <b class="">$@product.Price100.ToString("0.00")</b></p>
+                             </div>
+                             <div>@product.Category.Name</div>
+                         </div>
+                         <div>
+                             <a asp-action="Details" class="btn btn-outline-success form-control" asp-route-id="@product.Id">Details</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         }
+     }
 
+     <div class="container">
+         <div><h1>Contact Us</h1></div>
+         <br />
+         <div class="row">
+             <div class="col-md-6">
+                 <div id="googlemap" style="width:250px; height:500px;">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.004095784072!2d77.59386981389619!3d12.97158949085592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16775069abf7%3A0xe138768bb2a0df8a!2sUB%20City!5e0!3m2!1sen!2sin!4v1622365215827!5m2!1sen!2sin" width="500" height="400" allowfullscreen="" loading="lazy"></iframe>
 </div>
+             </div>
+             <br />
+             <div class="col-md-6">
+                 <form class="my-form">
+                     <div class="form-group">
+                         <label for="form-name">Name</label>
+                         <input type="email" class="form-control" id="form-name" placeholder="Name">
+                     </div>
+                     <div class="form-group">
+                         <label for="form-email">Email Address</label>
+                         <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+                     </div>
+                     <div class="form-group">
+                         <label for="form-subject">Telephone</label>
+                         <input type="text" class="form-control" id="form-subject" placeholder="Subject">
+                     </div>
+                     <div class="form-group">
+                         <label for="form-message">Email your Message</label>
+                         <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+                     </div>
+                     <button class="btn btn-default" type="submit" onclick="clickme()">Contact Us</button>
+                 </form>
+             </div>
+         </div>
+     </div>
+
+     <style>
+         .my-form {
+             color: #305896;
+         }
+
+             .my-form .btn-default {
+                 background-color: #305896;
+                 color: #fff;
+                 border-radius: 0;
+             }
+
+                 .my-form .btn-default:hover {
+                     background-color: #4498C6;
+                     color: #fff;
+                 }
+
+             .my-form .form-control {
+                 border-radius: 0;
+             }
+     </style>
+     
+     
+
+<script>
+    function clickme() {
+        return swal("Good job!", "Review Submitted!", "success");
+
+    };
+</script>
